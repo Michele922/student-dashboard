@@ -45,7 +45,7 @@ export const STUDENTS = [
     age: "45",
     email: "maurits@wincacademy.nl",
     phoneNumber: "+316640237141",
-    imgUrl: "/studentImages/6.jpg",
+    imgUrl: "/studentImages/5.jpg",
   },
   {
     id: "6",
