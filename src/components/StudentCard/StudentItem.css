@@ -1,0 +1,36 @@
+.student-item-container {
+  background-color: darkolivegreen;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.student-item-container > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.student-item-container > .overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  border-radius: 0px 0px 7px 7px;
+}
+
+.student-item-container:hover > .overlay {
+  opacity: 1;
+}

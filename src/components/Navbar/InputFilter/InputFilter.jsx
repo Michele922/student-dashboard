@@ -1,7 +1,7 @@
 import React from "react";
-import "./Filter.css";
+import "./InputFilter.css";
 
-const Filter = () => {
+const InputFilter = () => {
   return (
     <>
       <div className="main">
@@ -67,4 +67,4 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+export default InputFilter;

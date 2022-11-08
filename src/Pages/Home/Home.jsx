@@ -1,11 +1,12 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar/Navbar";
-import Filter from "../../components/Navbar/InputFilter/InputFilter";
+import InputFilter from "../../components/Navbar/InputFilter/InputFilter";
+import Navbar from "../../components/Navbar/Navbar";
+
 const Home = () => {
   return (
     <div>
       <Navbar />
-      <Filter />
+      <InputFilter />
     </div>
   );
 };

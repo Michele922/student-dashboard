@@ -1,0 +1,42 @@
+.student-gallery > h1 {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  font-size: 35px;
+  color: rgb(155, 155, 155);
+}
+.student-grid {
+  display: grid;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+  cursor: pointer;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 300px;
+  gap: 20px;
+}
+
+@media screen and (max-width: 1280px) {
+  .student-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .student-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .student-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .student-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
