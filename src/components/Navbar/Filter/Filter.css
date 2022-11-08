@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 10px;
   margin: 30px;
-  width: 30vh;
+  width: 40vh;
   border: 3px solid white;
   background-color: white;
   border-radius: 10px;
@@ -25,6 +25,14 @@
 
 .student-list > label > input {
   margin: 5px;
+}
+
+.student-list > h2 {
+  margin-top: 20px;
+  padding: 5px;
+  background-color: transparent;
+  color: rgb(155, 155, 155);
+  font-size: 20px;
 }
 
 .bar-chart {

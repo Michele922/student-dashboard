@@ -51,6 +51,7 @@ const Filter = () => {
             <input type="checkbox" />
             Wietske
           </label>
+          <h2>Filter on:</h2>
           <label>
             <input type="checkbox" />
             How much fun was this exercise?
