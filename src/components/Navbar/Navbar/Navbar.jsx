@@ -5,8 +5,8 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <h1>Winc Academey</h1>
-      <a href="/#">Home</a>
-      <a href="./Students.jsx">Students</a>
+      <a href="/">Home</a>
+      <a href="./students">Students</a>
     </nav>
   );
 };
