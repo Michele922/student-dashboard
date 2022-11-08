@@ -1,0 +1,14 @@
+.select-student {
+  display: flex;
+
+  padding: 10px;
+  margin: 30px;
+  width: 40vh;
+  border: 3px solid white;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.main {
+  display: flex;
+}
