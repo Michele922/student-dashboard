@@ -1,12 +1,10 @@
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar/Navbar";
-import Filter from "./components/Navbar/Filter/Filter";
+import Home from "./Pages/Home/Home";
 
 const App = () => {
   return (
     <div className="App">
-      <Navbar />
-      <Filter />
+      <Home />
     </div>
   );
 };
