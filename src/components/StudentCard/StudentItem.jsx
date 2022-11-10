@@ -1,15 +1,39 @@
 import { Link } from "react-router-dom";
 import "./StudentItem.css";
 
-const StudentItem = ({ student }) => {
-  const { name, imgUrl, id } = student;
+const StudentItem = ({ student, itemType }) => {
+  const { name, imgUrl, id, age, email, phoneNumber } = student;
 
-  return (
-    <Link to={`/students/${id}`} className="student-item-container">
-      <img src={imgUrl} />
-      <div className="overlay">{name}</div>
-    </Link>
-  );
+  if (itemType === "image") {
+    return (
+      <Link to={`/students/${id}`} className="student-item-image-container">
+        <img src={imgUrl} />
+        <div className="overlay">{name}</div>
+      </Link>
+    );
+  }
+
+  if (itemType === "details") {
+    return (
+      <div className="student-item-card-container">
+        <h1>Student</h1>
+        <div>
+          <p>
+            <i>Name:</i> {name}
+          </p>
+          <p>
+            <i>Age:</i> {age}
+          </p>
+          <p>
+            <i>Email:</i> {email}
+          </p>
+          <p>
+            <i>Phone:</i> {phoneNumber}
+          </p>
+        </div>
+      </div>
+    );
+  }
 };
 
 export default StudentItem;

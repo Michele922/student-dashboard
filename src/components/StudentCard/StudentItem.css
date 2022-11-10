@@ -1,4 +1,4 @@
-.student-item-container {
+.student-item-image-container {
   background-color: darkolivegreen;
   position: relative;
   width: 100%;
@@ -7,14 +7,14 @@
   object-fit: cover;
 }
 
-.student-item-container > img {
+.student-item-image-container > img {
   height: 100%;
   width: 100%;
   border-radius: 7px;
   object-fit: cover;
 }
 
-.student-item-container > .overlay {
+.student-item-image-container > .overlay {
   position: absolute;
   bottom: 0;
   background: rgb(0, 0, 0);
@@ -31,6 +31,29 @@
   border-radius: 0px 0px 7px 7px;
 }
 
-.student-item-container:hover > .overlay {
+.student-item-image-container:hover > .overlay {
   opacity: 1;
+}
+
+.student-item-card-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 30px;
+  width: 40vh;
+  border: 3px solid white;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.student-item-card-container > h1 {
+  padding: 5px;
+  background-color: transparent;
+  color: rgb(155, 155, 155);
+  font-size: 30px;
+}
+
+.student-item-card-container > div > p {
+  font-size: 18px;
+  padding: 10px 0px;
 }

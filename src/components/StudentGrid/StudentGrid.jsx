@@ -10,7 +10,13 @@ const StudentGrid = () => {
         <h1>Students</h1>
         <div className="student-grid">
           {STUDENTS.map((student) => {
-            return <StudentItem key={student.id} student={student} />;
+            return (
+              <StudentItem
+                key={student.id}
+                student={student}
+                itemType="image"
+              />
+            );
           })}
         </div>
       </div>
