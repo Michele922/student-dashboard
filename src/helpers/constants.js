@@ -1,6 +1,6 @@
 export const STUDENTS = [
   {
-    id: "0",
+    studentId: "0",
     name: "Aranka",
     age: "25",
     email: "aranka@wincacademy.nl",
@@ -8,7 +8,7 @@ export const STUDENTS = [
     imgUrl: "/studentImages/0.jpg",
   },
   {
-    id: "1",
+    studentId: "1",
     name: "Evelyn",
     age: "30",
     email: "evelyn@wincacademy.nl",
@@ -16,7 +16,7 @@ export const STUDENTS = [
     imgUrl: "/studentImages/1.jpg",
   },
   {
-    id: "2",
+    studentId: "2",
     name: "Floris",
     age: "50",
     email: "floris@wincacademy.nl",
@@ -24,7 +24,7 @@ export const STUDENTS = [
     imgUrl: "/studentImages/2.jpg",
   },
   {
-    id: "3",
+    studentId: "3",
     name: "Hector",
     age: "27",
     email: "hector@wincacademy.nl",
@@ -32,7 +32,7 @@ export const STUDENTS = [
     imgUrl: "/studentImages/3.jpg",
   },
   {
-    id: "4",
+    studentId: "4",
     name: "Martina",
     age: "44",
     email: "martina@wincacademy.nl",
@@ -40,7 +40,7 @@ export const STUDENTS = [
     imgUrl: "/studentImages/4.jpg",
   },
   {
-    id: "5",
+    studentId: "5",
     name: "Maurits",
     age: "45",
     email: "maurits@wincacademy.nl",
@@ -48,7 +48,7 @@ export const STUDENTS = [
     imgUrl: "/studentImages/5.jpg",
   },
   {
-    id: "6",
+    studentId: "6",
     name: "Rahima",
     age: "22",
     email: "rahima@wincacademy.nl",
@@ -56,7 +56,7 @@ export const STUDENTS = [
     imgUrl: "/studentImages/6.jpg",
   },
   {
-    id: "7",
+    studentId: "7",
     name: "Sandra",
     age: "39",
     email: "sandra@wincacademy.nl",
@@ -64,7 +64,7 @@ export const STUDENTS = [
     imgUrl: "/studentImages/7.jpg",
   },
   {
-    id: "8",
+    studentId: "8",
     name: "Storm",
     age: "33",
     email: "storm@wincacademy.nl",
@@ -72,7 +72,7 @@ export const STUDENTS = [
     imgUrl: "/studentImages/8.jpg",
   },
   {
-    id: "9",
+    studentId: "9",
     name: "Wietske",
     age: "37",
     email: "wietske@wincacademy.nl",

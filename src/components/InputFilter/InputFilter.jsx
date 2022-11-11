@@ -1,89 +1,151 @@
 import React from "react";
-import Charts from "../../pages/Charts/Charts";
+import Charts from "../../components/Charts/Charts";
 import react, { useState } from "react";
 import "./InputFilter.css";
+import { getStudentData, getStudentNames } from "../../helpers/dataHelpers";
+import Chart from "../Chart/Chart";
 
 const InputFilter = () => {
   const [funInputValue, setFunInputValue] = useState(true);
   const [difficultyInputValue, setDifficultyInputValue] = useState(true);
 
+  const [students, setStudents] = useState(
+    getStudentNames().map((item) => {
+      return {
+        name: item,
+        state: true,
+      };
+    })
+  );
+
+  console.log(students);
+
+  const handleStudentsChange = (name, newState) => {
+    setStudents((prevState) => {
+      return prevState.map((item) => {
+        if (item.name === name) {
+          return {
+            ...item,
+            state: newState,
+          };
+        }
+        return item;
+      });
+    });
+  };
+
+  const filteredStudentsData = () => {
+    const filteredStudentsData = getStudentData().filter((studentDataItem) => {
+      const student = students.find((studentItem) => {
+        return studentItem.name === studentDataItem.name;
+      });
+      return student !== undefined && student.state === true;
+    });
+    return filteredStudentsData;
+  };
+
+  const calculateAverageForKey = (assignment, key) => {
+    let average = 0;
+    let items = 0;
+
+    filteredStudentsData().forEach((item) => {
+      if (item.assignment === assignment) {
+        average += item[key];
+        items++;
+      }
+    });
+    return average / items;
+  };
+
+  const averageStudentData = () => {
+    const averageStudentData = [];
+    let filterItemId = 1;
+
+    filteredStudentsData().forEach((studentItem) => {
+      const data = averageStudentData.find((filterItem) => {
+        return studentItem.assignment === filterItem.assignment;
+      });
+
+      if (data === undefined) {
+        const averageDifficult = calculateAverageForKey(
+          studentItem.assignment,
+          "difficult"
+        );
+        const averageFun = calculateAverageForKey(
+          studentItem.assignment,
+          "fun"
+        );
+        averageStudentData.push({
+          id: filterItemId++,
+          name: "average",
+          assignment: studentItem.assignment,
+          difficult: averageDifficult,
+          fun: averageFun,
+        });
+      }
+    });
+    return averageStudentData;
+  };
+
   return (
     <>
       <div className="main">
-        <div className="student-list">
-          <h1>Student list </h1>
-          <label>
-            <input type="checkbox" />
-            Average
-          </label>
-          <label>
-            <input type="checkbox" />
-            Aranka
-          </label>
-          <label>
-            <input type="checkbox" />
-            Evelyn
-          </label>
-          <label>
-            <input type="checkbox" />
-            Floris
-          </label>
-          <label>
-            <input type="checkbox" />
-            Hector
-          </label>
-          <label>
-            <input type="checkbox" />
-            Martina
-          </label>
-          <label>
-            <input type="checkbox" />
-            Maurits
-          </label>
-          <label>
-            <input type="checkbox" />
-            Rahima
-          </label>
-          <label>
-            <input type="checkbox" />
-            Sandra
-          </label>
-          <label>
-            <input type="checkbox" />
-            Storm
-          </label>
-          <label>
-            <input type="checkbox" />
-            Wietske
-          </label>
+        <div className="filters">
           <h2>Filter on:</h2>
-          <label>
-            <input
-              name="funInput"
-              type="checkbox"
-              checked={funInputValue}
-              onChange={() => {
-                setFunInputValue(!funInputValue);
-              }}
-            />
-            How much fun was this exercise?
-          </label>
-          <label>
-            <input
-              name="difficultyInput"
-              type="checkbox"
-              checked={difficultyInputValue}
-              onChange={() => {
-                setDifficultyInputValue(!difficultyInputValue);
-              }}
-            />
-            How difficult was this exercise?
-          </label>
+          <div>
+            <h4>Students:</h4>
+            <div className="student-list">
+              {students.map((student) => {
+                return (
+                  <div key={`key_${student.name}`}>
+                    <label htmlFor={`${student.name}_checkbox`}>
+                      {student.name}
+                    </label>
+                    <input
+                      name={`${student.name}_checkbox`}
+                      type="checkbox"
+                      checked={student.state}
+                      onChange={() => {
+                        handleStudentsChange(student.name, !student.state);
+                      }}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <h4>Type:</h4>
+          <div className="bar-settings">
+            <div>
+              <input
+                name="funInput"
+                type="checkbox"
+                checked={funInputValue}
+                onChange={() => {
+                  setFunInputValue(!funInputValue);
+                }}
+              />
+              <label htmlFor="funInput">How much fun was this exercise?</label>
+            </div>
+            <div>
+              <input
+                name="difficultyInput"
+                type="checkbox"
+                checked={difficultyInputValue}
+                onChange={() => {
+                  setDifficultyInputValue(!difficultyInputValue);
+                }}
+              />
+              <label htmlFor="difficultyInput">
+                How difficult was this exercise?
+              </label>
+            </div>
+          </div>
         </div>
         <div className="home-bar-chart">
-          <Charts
+          <Chart
             config={{
-              studentNames: ["Aranka", "Evelyn"],
+              data: averageStudentData(),
               showFunBar: funInputValue,
               showDifficultyBar: difficultyInputValue,
             }}
