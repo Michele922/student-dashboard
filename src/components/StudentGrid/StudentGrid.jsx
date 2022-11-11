@@ -12,7 +12,7 @@ const StudentGrid = () => {
           {STUDENTS.map((student) => {
             return (
               <StudentItem
-                key={student.id}
+                key={student.name}
                 student={student}
                 itemType="image"
               />

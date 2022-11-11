@@ -1,6 +1,4 @@
-import React from "react";
-import Charts from "../../components/Charts/Charts";
-import react, { useState } from "react";
+import { useState } from "react";
 import "./InputFilter.css";
 import { getStudentData, getStudentNames } from "../../helpers/dataHelpers";
 import Chart from "../Chart/Chart";
@@ -17,8 +15,6 @@ const InputFilter = () => {
       };
     })
   );
-
-  console.log(students);
 
   const handleStudentsChange = (name, newState) => {
     setStudents((prevState) => {

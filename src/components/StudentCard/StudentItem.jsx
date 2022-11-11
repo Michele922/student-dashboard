@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import "./StudentItem.css";
 
 const StudentItem = ({ student, itemType }) => {
-  const { name, imgUrl, id, age, email, phoneNumber } = student;
+  const { name, imgUrl, age, email, phoneNumber } = student;
 
   if (itemType === "image") {
     return (
-      <Link to={`/students/${id}`} className="student-item-image-container">
+      <Link to={`/students/${name}`} className="student-item-image-container">
         <img src={imgUrl} />
         <div className="overlay">{name}</div>
       </Link>
