@@ -1,7 +1,12 @@
 import React from "react";
+import Charts from "../../pages/Charts/Charts";
+import react, { useState } from "react";
 import "./InputFilter.css";
 
 const InputFilter = () => {
+  const [funInputValue, setFunInputValue] = useState(true);
+  const [difficultyInputValue, setDifficultyInputValue] = useState(true);
+
   return (
     <>
       <div className="main">
@@ -9,7 +14,7 @@ const InputFilter = () => {
           <h1>Student list </h1>
           <label>
             <input type="checkbox" />
-            Show All
+            Average
           </label>
           <label>
             <input type="checkbox" />
@@ -53,15 +58,37 @@ const InputFilter = () => {
           </label>
           <h2>Filter on:</h2>
           <label>
-            <input type="checkbox" />
+            <input
+              name="funInput"
+              type="checkbox"
+              checked={funInputValue}
+              onChange={() => {
+                setFunInputValue(!funInputValue);
+              }}
+            />
             How much fun was this exercise?
           </label>
           <label>
-            <input type="checkbox" />
+            <input
+              name="difficultyInput"
+              type="checkbox"
+              checked={difficultyInputValue}
+              onChange={() => {
+                setDifficultyInputValue(!difficultyInputValue);
+              }}
+            />
             How difficult was this exercise?
           </label>
         </div>
-        <div className="bar-chart"></div>
+        <div className="home-bar-chart">
+          <Charts
+            config={{
+              studentNames: ["Aranka", "Evelyn"],
+              showFunBar: funInputValue,
+              showDifficultyBar: difficultyInputValue,
+            }}
+          />
+        </div>
       </div>
     </>
   );

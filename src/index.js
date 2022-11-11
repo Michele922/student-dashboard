@@ -8,6 +8,7 @@ import Home from "./pages/Home/Home";
 import StudentDetail from "./pages/StudentDetail/StudentDetail";
 
 import "./index.css";
+import Charts from "./pages/Charts/Charts";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     path: "/students/:studentId",
     element: <StudentDetail />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/charts",
+    element: <Charts />,
   },
 ]);
 
