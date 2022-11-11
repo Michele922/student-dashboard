@@ -16,6 +16,10 @@ const InputFilter = () => {
     })
   );
 
+  /**
+   * It takes a name and a new state, and then it returns a new array of students, where the student with
+   * the given name has its state changed to the given new state.
+   */
   const handleStudentsChange = (name, newState) => {
     setStudents((prevState) => {
       return prevState.map((item) => {
@@ -30,6 +34,11 @@ const InputFilter = () => {
     });
   };
 
+  /**
+   * Return an array of student data objects, where the student data object's name matches the name of a
+   * student object in the students array, and the student object's state is true.
+   * @returns An array of objects.
+   */
   const filteredStudentsData = () => {
     const filteredStudentsData = getStudentData().filter((studentDataItem) => {
       const student = students.find((studentItem) => {
@@ -40,6 +49,11 @@ const InputFilter = () => {
     return filteredStudentsData;
   };
 
+  /**
+   * "It takes an assignment and a key, and returns the average of the values of that key for all
+   * students who have that assignment."
+   * @returns The average of the assignment scores for the given assignment.
+   */
   const calculateAverageForKey = (assignment, key) => {
     let average = 0;
     let items = 0;
@@ -53,6 +67,11 @@ const InputFilter = () => {
     return average / items;
   };
 
+  /**
+   * It takes the filteredStudentsData() array and creates a new array with the average of the difficult
+   * and fun properties for each assignment.
+   * @returns An array of objects.
+   */
   const averageStudentData = () => {
     const averageStudentData = [];
     let filterItemId = 1;

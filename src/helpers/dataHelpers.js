@@ -5,6 +5,11 @@ export const getStudentData = () => {
   return StudentData;
 };
 
+/**
+ * It loops through the STUDENTS array, and if the name of the student is not already in the students
+ * array, it adds it.
+ * @returns An array of student names.
+ */
 export const getStudentNames = () => {
   const students = [];
 
