@@ -3,12 +3,11 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import ErrorPage from "./error-page";
-import Students from "./pages/Students/Students";
 import Home from "./pages/Home/Home";
 import StudentDetail from "./pages/StudentDetail/StudentDetail";
+import Students from "./pages/Students/Students";
 
 import "./index.css";
-import Charts from "./pages/Charts/Charts";
 
 const router = createBrowserRouter([
   {
@@ -25,10 +24,6 @@ const router = createBrowserRouter([
     path: "/students/:studentId",
     element: <StudentDetail />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/charts",
-    element: <Charts />,
   },
 ]);
 
