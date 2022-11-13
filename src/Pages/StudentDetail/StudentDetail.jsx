@@ -1,23 +1,25 @@
 import { useState } from "react";
+import { getStudentData } from "../../helpers/dataHelpers";
 import { Link, useParams } from "react-router-dom";
+import { STUDENTS } from "../../helpers/constants";
+import Chart from "../../components/Chart/Chart";
 import Navbar from "../../components/Navbar/Navbar";
 import StudentItem from "../../components/StudentCard/StudentItem";
-import Charts from "../Charts/Charts";
-import { STUDENTS } from "../../helpers/constants";
-
 import "./StudentDetail.css";
 
 const StudentDetail = () => {
-  const { studentId } = useParams();
+  const { studentName } = useParams();
 
   const [funInputValue, setFunInputValue] = useState(true);
   const [difficultyInputValue, setDifficultyInputValue] = useState(true);
 
   const student = STUDENTS.find((student) => {
-    return student.id === studentId;
+    return student.name === studentName;
   });
 
-  console.log(student);
+  const studentData = getStudentData().filter((studentDataItem) => {
+    return studentDataItem.name === student.name;
+  });
 
   return (
     <>
@@ -49,9 +51,9 @@ const StudentDetail = () => {
         </label>
       </div>
       <div className="student-bar-chart">
-        <Charts
+        <Chart
           config={{
-            studentNames: [student.name],
+            data: studentData,
             showFunBar: funInputValue,
             showDifficultyBar: difficultyInputValue,
           }}
