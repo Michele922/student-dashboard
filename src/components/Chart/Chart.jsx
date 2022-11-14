@@ -8,7 +8,7 @@ const Chart = ({ config }) => {
           <BarChart width={5000} height={400} data={config.data}>
             <CartesianGrid stroke="#ccc" />
             {config.showDifficultyBar ? (
-              <Bar type="monotone" dataKey="difficult" fill="#234522" />
+              <Bar type="monotone" dataKey="difficult" fill="#ffc658" />
             ) : null}
             {config.showFunBar ? (
               <Bar type="monotone" dataKey="fun" fill="#8884d8" />

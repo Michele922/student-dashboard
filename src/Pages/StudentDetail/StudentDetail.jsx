@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { getStudentData } from "../../helpers/dataHelpers";
 import { Link, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { getStudentData } from "../../helpers/dataHelpers";
 import { STUDENTS } from "../../helpers/constants";
 import Chart from "../../components/Chart/Chart";
 import Navbar from "../../components/Navbar/Navbar";
 import StudentItem from "../../components/StudentCard/StudentItem";
+
 import "./StudentDetail.css";
 
 const StudentDetail = () => {
@@ -24,8 +27,10 @@ const StudentDetail = () => {
   return (
     <>
       <Navbar />
+
       <Link className="back-to-students" to="/students">
-        Back to Students
+        <FontAwesomeIcon icon={faArrowLeft} />
+        <p>Back to Students</p>
       </Link>
       <StudentItem student={student} itemType="details" />
       <div className="checkbox-container">

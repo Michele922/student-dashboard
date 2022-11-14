@@ -3,9 +3,9 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import ErrorPage from "./error-page";
-import Home from "./pages/Home/Home";
-import StudentDetail from "./pages/StudentDetail/StudentDetail";
-import Students from "./pages/Students/Students";
+import Home from "./Pages/Home/Home";
+import StudentDetail from "./Pages/StudentDetail/StudentDetail";
+import Students from "./Pages/Students/Students";
 
 import "./index.css";
 

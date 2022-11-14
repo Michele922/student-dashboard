@@ -5,5 +5,11 @@
 
 body {
   background-color: #f3f3f3;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 18px;
+}
+
+h1,
+a {
+  font-family: "Open Sans", sans-serif;
 }
