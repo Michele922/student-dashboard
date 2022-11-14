@@ -7,6 +7,7 @@ const Chart = ({ config }) => {
         <div style={{ maxWidth: "100%", overflowX: "scroll" }}>
           <BarChart width={5000} height={400} data={config.data}>
             <CartesianGrid stroke="#ccc" />
+            <Tooltip />
             {config.showDifficultyBar ? (
               <Bar type="monotone" dataKey="difficult" fill="#ffc658" />
             ) : null}
@@ -15,7 +16,6 @@ const Chart = ({ config }) => {
             ) : null}
             <XAxis dataKey="assignment" width={200} />
             <YAxis />
-            <Tooltip />
           </BarChart>
         </div>
       </div>
